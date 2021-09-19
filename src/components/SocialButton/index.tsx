@@ -1,14 +1,19 @@
 import Link from 'next/link';
-import { FiGithub } from "react-icons/fi";
+import { IconType } from 'react-icons';
 
 import { Container } from "./styles";
 
-export default function SocialButton() {
+interface Props { 
+  url: string;
+  icon: IconType;
+}
+
+export default function SocialButton({ url, icon: Icon }: Props) {
   return (
     <Container>
-      <Link href="/">
+      <Link href={url}>
         <a>
-          <FiGithub size={20} />
+          <Icon size={20} />
         </a>
       </Link>
     </Container>

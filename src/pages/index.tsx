@@ -7,6 +7,7 @@ import SocialButton from '../components/SocialButton';
 import Header from '../components/Header';
 
 import { Container, Content, Divider, Title, ContainerTitle, Footer } from '../styles/Home/styles';
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 const Home: NextPage = () => {
   return (
@@ -26,8 +27,8 @@ const Home: NextPage = () => {
       </Content>  
 
       <Footer>
-        <SocialButton />
-        <SocialButton />
+        <SocialButton url="/" icon={FiGithub} />
+        <SocialButton url="/" icon={FiLinkedin} />
       </Footer>
     </Container>
   )
