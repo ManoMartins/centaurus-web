@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   align-items: flex-end;
+  
+  margin: 131px auto 40px;
+  max-width: 1100px;
 `;
 
 export const Cover = styled.img`

@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 import GameHomeList from '../components/GameHomeList';
 import ReleasesWeek from '../components/ReleasesWeek';
@@ -7,7 +8,6 @@ import SocialButton from '../components/SocialButton';
 import Header from '../components/Header';
 
 import { Container, Content, Divider, Title, ContainerTitle, Footer } from '../styles/Home/styles';
-import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 const Home: NextPage = () => {
   return (
