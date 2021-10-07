@@ -44,8 +44,8 @@ export default function Game({ game }: Props) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const { slug } = params;
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { slug } = ctx.params as { slug: string };
 
   const response = await api.post(
     "/",
