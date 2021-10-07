@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <Container>
       <div>
-        <Logo>Centeurus</Logo>
+        <Logo>Centaurus</Logo>
         <Navigation />
       </div>
     </Container>
