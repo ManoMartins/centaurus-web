@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Link from 'next/link';
+import Link from "next/link";
 
 export const Container = styled.nav`
   > ul {
@@ -10,6 +10,14 @@ export const Container = styled.nav`
       margin-left: 2rem;
       font-size: 1rem;
       font-weight: 600;
+
+      a {
+        text-decoration: none;
+      }
+
+      .active {
+        color: #ff9000;
+      }
     }
   }
 `;

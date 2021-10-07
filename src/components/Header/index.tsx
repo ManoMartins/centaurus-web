@@ -1,5 +1,4 @@
 import Navigation from '../Navigation';
-import Search from '../Search';
 
 import { Container, Logo } from './styles';
 
@@ -10,7 +9,6 @@ export default function Header() {
         <Logo>Centeurus</Logo>
         <Navigation />
       </div>
-      <Search />
     </Container>
   );
 }

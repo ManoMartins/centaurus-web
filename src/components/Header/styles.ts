@@ -7,6 +7,7 @@ export const Container = styled.div`
 
   max-width: 1400px;
   margin: 48px auto;
+  padding: 0 16px;
 
   > div {
     display: flex;

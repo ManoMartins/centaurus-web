@@ -1,18 +1,21 @@
-import { Container, StyledLink as Link } from './styles';
+import { useRouter } from 'next/dist/client/router';
+import React from 'react';
+import ActiveLink from '../ActiveLink';
+import { Container } from './styles';
 
 export default function Navigation() {
   return (
     <Container>
       <ul>
         <li>
-          <Link href="/">
+          <ActiveLink activeClassName={"active"} href="/">
             <a>Home</a>
-          </Link>
+          </ActiveLink>
         </li>
         <li>
-          <Link href="/games">
+          <ActiveLink activeClassName={"active"} href="/games">
             <a>Games</a>
-          </Link>
+          </ActiveLink>
         </li>
       </ul>
     </Container>
