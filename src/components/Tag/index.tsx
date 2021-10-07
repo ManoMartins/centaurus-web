@@ -13,7 +13,7 @@ export default function Tag({ title, link }: Props) {
     <Container>
       {link && (
         <Link href={link}>
-          <a>{ title } <FiExternalLink size={14} /></a>
+          <a target="_blank">{ title } <FiExternalLink size={14} /></a>
         </Link>
       ) || (
         <Title>{ title }</Title>

@@ -1,9 +1,10 @@
 import { Container, Title, TagList } from './styles';
 
 import Tag from '../Tag';
+import { CategoryEnum } from '../../types/game';
 
 interface TagData {
-  link?: string;
+  url?: string;
   name: string;
 }
 
@@ -18,7 +19,7 @@ export default function Tags({ tags, title }: Props) {
       <Title>{ title }</Title>
       <TagList>
         {tags.map(tag => (
-          <Tag title={tag.name} key={tag.name} link={tag.link} />
+          <Tag title={tag.name} key={tag.name} link={tag.url} />
         ))}
       </TagList>
     </Container>

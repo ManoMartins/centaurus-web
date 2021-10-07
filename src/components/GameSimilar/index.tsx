@@ -1,10 +1,23 @@
-import { Container, Image, Name } from './styles';
+import React, { useMemo } from "react";
+import { CoverData } from "../../types/game";
+import { formatImageUrl } from "../../utils/Format/imageUrl";
+import { Container, LinkContainer, Image, Name } from "./styles";
 
-export default function GameSimilar() {
+interface Props {
+  name: string;
+  slug: string;
+  cover: CoverData;
+}
+
+export default function GameSimilar({ name, cover, slug }: Props) {
   return (
     <Container>
-      <Image src="https://news.xbox.com/en-us/wp-content/uploads/sites/2/2021/08/ForzaHorizon5_KeyArt_Vert_RGB_Final.jpg" alt="ForzaHorizon" />
-      <Name>God of war 4</Name>
+      <LinkContainer href={`${slug}`}>
+        <a>
+          <Image src={formatImageUrl(cover?.url)} alt={name} />
+          <Name>{name}</Name>
+        </a>
+      </LinkContainer>
     </Container>
   );
 }

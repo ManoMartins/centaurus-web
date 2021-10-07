@@ -1,4 +1,9 @@
-import RatingStars from '../RatingStars';
+import { useMemo } from "react";
+import { CoverData } from "../../types/game";
+import { formatDate } from "../../utils/Format/date";
+import { formatImageUrl } from "../../utils/Format/imageUrl";
+import { formatRating } from "../../utils/Format/rating";
+import RatingStars from "../RatingStars";
 import {
   Container,
   Cover,
@@ -9,28 +14,53 @@ import {
   Rating,
   RatingCount,
   Description,
-} from './styles';
+} from "./styles";
 
-export default function GamePageHeader() {
+interface Props {
+  cover: CoverData;
+  name: string;
+  releaseDate: number;
+  rating: number;
+  ratingCount: number;
+  description: string;
+}
+
+export default function GamePageHeader({
+  cover,
+  name,
+  releaseDate,
+  rating,
+  ratingCount,
+  description,
+}: Props) {
+  const formattedRating = useMemo(() => {
+    return formatRating(rating);
+  }, [rating]);
+
+  const firstLineDescription = useMemo(() => {
+    return description.split("\n")[0];
+  }, [description]);
+
   return (
     <Container>
-      <Cover src="https://news.xbox.com/en-us/wp-content/uploads/sites/2/2021/08/ForzaHorizon5_KeyArt_Vert_RGB_Final.jpg" />
+      <Cover src={formatImageUrl(cover?.url)} alt={name} />
 
       <Content>
-        <Title>Forza horizon 5</Title>
+        <Title>{name}</Title>
 
-        <ReleaseDate>Nov 09, 2021</ReleaseDate>
+        {releaseDate && (
+          <ReleaseDate>{formatDate(releaseDate)}</ReleaseDate>
+        )}
 
-        <ContainerRating>
-          <RatingStars />
-          <Rating>3.5</Rating>
-          <RatingCount>1,879,879 Votes</RatingCount>
-        </ContainerRating>
+        {ratingCount > 0 && (
+          <ContainerRating>
+            <RatingStars rating={formattedRating} />
+            <Rating>{formattedRating}/10</Rating>
+            <RatingCount>{ratingCount} Votes</RatingCount>
+          </ContainerRating>
+        )}
 
-        <Description>
-          Your Ultimate Horizon Adventure awaits! Explore the vibrant and ever-evolving open-world landscapes of Mexico with limitless, fun driving action in hundreds of the world’s greatest cars.
-        </Description>
-        
+        <Description>{firstLineDescription}</Description>
       </Content>
     </Container>
   );
