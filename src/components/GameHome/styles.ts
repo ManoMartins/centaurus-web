@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -15,13 +17,34 @@ export const Container = styled.div`
   }
 `;
 
-export const Cover = styled.img`
-  width: 100%;
-  height: 100%;
+export const LinkContainer = styled(Link)``;
+
+export const Cover = styled(Image)`
   border-radius: 24px 24px 24px 0;
   object-fit: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  border-radius: 8px;
+
+  background: #f5f5f5;
+  background-image: linear-gradient(
+    to right,
+    #f5f5f5 0%,
+    #d6d6d6 20%,
+    #f5f5f5 40%,
+    #f5f5f5 100%
+  );
+  background-size: 80rem 14rem;
+  animation: placeholderShimmer 1s linear infinite forwards;
+  @keyframes placeholderShimmer {
+    0% {
+      background-position: -40rem 0;
+    }
+    100% {
+      background-position: 40rem 0;
+    }
+  }
 `;
 
 export const WrapperPosition = styled.div`
@@ -50,6 +73,10 @@ export const Name = styled.p`
   font-size: 24px;
   font-weight: bold;
   position: absolute;
-  bottom: -14px;
+  bottom: 8px;
   left: 18px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 80%;
 `;

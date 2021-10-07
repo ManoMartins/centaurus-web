@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  padding: 0 16px;
+`;
 
 export const Content = styled.div`
   display: flex;
@@ -33,6 +35,7 @@ export const ContainerTitle = styled.div`
     font-weight: 300;
     margin-left: 6px;
     margin-bottom: 22px;
+    text-decoration: none;
 
     &:hover {
       color: #2A5BD8;
