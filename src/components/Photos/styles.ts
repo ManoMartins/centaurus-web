@@ -39,5 +39,5 @@ export const Photo = styled(Image)`
 export const Legend = styled.span`
   font-size: 14px;
   color: #e5e5e5;
-  margin-top: 12px;
+  margin: 12px 0;
 `;

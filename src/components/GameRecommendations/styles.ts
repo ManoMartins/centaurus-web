@@ -18,24 +18,34 @@ export const Recommendations = styled.div`
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
-  ::-webkit-scrollbar{
+
+  ::-webkit-scrollbar {
     width: 4px;
     height: 8px;
   }
 
-  ::-webkit-scrollbar-thumb{
-    background: #A8A6A8;
+  ::-webkit-scrollbar-thumb {
+    background: #a8a6a8;
     border-radius: 0px;
+    visibility: hidden;
   }
 
-  ::-webkit-scrollbar-thumb:hover{
+  ::-webkit-scrollbar-thumb:hover {
     background: #878587;
   }
 
-  ::-webkit-scrollbar-track{
-    background: #FFFFFF;
+  ::-webkit-scrollbar-track {
+    visibility: hidden;
+    background: #ffffff;
     border-radius: 0px;
-    box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+    box-shadow: inset 0px 0px 0px 0px #f0f0f0;
+  }
+
+  &:hover {
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-thumb {
+      visibility: visible;
+    }
   }
 
   > div + div {

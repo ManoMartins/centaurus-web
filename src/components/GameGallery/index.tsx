@@ -15,7 +15,7 @@ export default function GameGallery({ photos }: Props) {
         <ContainerPhotos>
           {!!photos ? (
             photos.map(photo => (
-              <Photos key={photo.id} link={photo.url} legend="Photo" />
+              <Photos key={photo.id} link={photo.url} legend="Screenshot" />
             ))
           ) : (
             <p>Sorry this title has not photos</p>

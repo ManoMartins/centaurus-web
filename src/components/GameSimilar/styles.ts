@@ -6,7 +6,7 @@ export const Container = styled.div`
   height: 190px;
   min-width: 133px;
   width: 133px;
-  margin-top: 40px;
+  margin: 40px 0 12px;
 `;
 
 export const LinkContainer = styled(Link)``;
